@@ -14,11 +14,11 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 m-auto max_padd_container w-full bg-white ring-1 ring-slate-900/5 z-10">
-      <div className="px-4 flexBetween py-3 max-xs:px-2">
+    <header className="fixed top-0 left-0  max_padd_container w-full bg-white ring-1 ring-slate-900/5 z-10">
+      <div className="px-4 flexBetween py-2 max-xs:px-2">
         <div>
           <Link to={""}>
-            <img src={logo} height={70} width={70} />
+            <img src={logo} height={50} width={50} />
           </Link>
         </div>
         <Navbar

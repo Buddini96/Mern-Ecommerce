@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         primary: '#f0f2f5',
-        secondary: '#ff813f',
+        secondary: '#0973be',
         tertiary: '#222222',
         slate: {
           10: '#f1f3f4',
@@ -26,7 +26,7 @@ export default {
         },
       },
      backgroundImage: {
-        hero: "url('/src/assets/bgecom.png')",
+        hero: "url('/src/assets/banner-3.png')",
         banneroffer: "url('/src/assets/banneroffer.png')",
       },
       screens: {

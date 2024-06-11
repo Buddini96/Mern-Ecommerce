@@ -1,10 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../assets/logo1.png";
+import logo from "../assets/logo3.png";
 import Navbar from "./Navbar";
 import { useState } from "react";
 import { MdClose, MdMenu } from "react-icons/md";
 import { FaOpencart } from "react-icons/fa";
 import user from "../assets/user.svg";
+import { FiShoppingCart } from "react-icons/fi";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -26,8 +27,8 @@ const Header = () => {
         <Navbar
           containerStyles={`${
             menuOpened
-              ? "flex item-start flex-col gap-y-12 fixed top-20 right-8 p-12 bg-white rounded-3xl shadow-md w-64 medium-16 ring-1 ring-slate-900/5 transition-all duration-300"
-              : "flex item-start flex-col gap-y-12 fixed top-20  p-12 bg-white rounded-3xl shadow-md w-64 medium-16 ring-1 ring-slate-900/5 transition-all duration-300 -right-[100%]"
+              ? "flex items-start flex-col gap-y-12 fixed top-20 right-8 p-12 bg-white rounded-3xl shadow-md w-64 medium-16 ring-1 ring-slate-900/5 transition-all duration-300"
+              : "flex items-start flex-col gap-y-12 fixed top-20  p-12 bg-white rounded-3xl shadow-md w-64 medium-16 ring-1 ring-slate-900/5 transition-all duration-300 -right-[100%]"
           }`}
         />
         <div className="flexBetween sm:gap-x-2 bold-16">

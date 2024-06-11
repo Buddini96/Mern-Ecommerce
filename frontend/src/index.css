@@ -77,7 +77,7 @@
   }
 
   .max-container {
-    @apply mx-auto max-w-[1440px];
+    @apply mx-auto max-w-[1540px];
   }
 
   .padding-container {
@@ -85,7 +85,7 @@
   }
   
   .max_padd_container {
-    @apply mx-auto max-w-[1440px] px-6 lg:px-20;
+    @apply mx-auto max-w-[1540px] px-6 lg:px-20;
   }
 
   .flexCenter {

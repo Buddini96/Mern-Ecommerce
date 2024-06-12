@@ -1,4 +1,4 @@
-import React, { createContext, useState, ReactNode } from "react";
+import React, { createContext, useState, ReactNode, useContext } from "react";
 //@ts-ignore
 import all_products from "../assets/all_products";
 
@@ -12,15 +12,16 @@ type Product = {
 };
 
 type Cart = {
-  [key: number]: number; 
+  [key: number]: number;
 };
 
-// Define the context value type
 interface ShopContextValue {
   all_products: Product[];
   cartItems: Cart;
   addToCart: (itemId: number) => void;
   removeFromCart: (itemId: number) => void;
+  getTotalCartAmount: () => number;
+  getTotalCartItems: () => number;
 }
 
 // Define the props for the provider
@@ -50,11 +51,37 @@ const ShopContextProvider: React.FC<ShopContextProviderProps> = ({ children }) =
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
 
+  const getTotalCartAmount = () => {
+    let totalAmount = 0;
+    for (const item in cartItems) {
+      if (cartItems[item] > 0) {
+        //@ts-ignore
+        let itemInfo = all_products.find((product) => product.id === Number(item));
+        if (itemInfo) {
+          totalAmount += itemInfo.new_price * cartItems[item];
+        }
+      }
+    }
+    return totalAmount;
+  };
+
+  const getTotalCartItems = () => {
+    let totalItem = 0;
+    for (const item in cartItems) {
+      if(cartItems[item] > 0) {
+        totalItem += cartItems[item];
+      }
+    }
+    return totalItem;
+  }
+
   const contextValue: ShopContextValue = {
     all_products,
     cartItems,
     addToCart,
     removeFromCart,
+    getTotalCartAmount,
+    getTotalCartItems,
   };
 
   return (

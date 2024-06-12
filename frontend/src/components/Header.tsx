@@ -13,6 +13,7 @@ const Header = () => {
   const toggleMenu = () => {
     setMenuOpened(!menuOpened);
   };
+  //@ts-ignore
   const {getTotalCartItems} = useContext(ShopContext);
 
   return (

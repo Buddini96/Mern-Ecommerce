@@ -121,6 +121,8 @@ app.get('/allProducts', async(req, res) => {
 })
 
 
+
+
 app.listen(port, (error) => {
     if(!error) {
         console.log("Server is running on port" + port);

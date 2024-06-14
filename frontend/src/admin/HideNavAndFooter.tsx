@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
-
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 //@ts-ignore
-function HideNavAndFooter({children}) {
-    const location = useLocation();
-    const [showNav, setShowNav] = useState(false)
-    useEffect(() => { 
-      if (location.pathname === '/main') {
-        setShowNav(false)
-      } else {
-        setShowNav(true)
-      }
-    }, [location])
+function HideNavAndFooter({ children }) {
+  const location = useLocation();
+  const [showNav, setShowNav] = useState(true);
+
+  useEffect(() => {
+    if (['/main', '/addProduct', '/listProduct', '/dashboard'].includes(location.pathname)) {
+      setShowNav(false);
+    } else {
+      setShowNav(true);
+    }
+  }, [location]);
 
   return (
     <div>
       {showNav && children}
     </div>
-  )
+  );
 }
 
-export default HideNavAndFooter
+export default HideNavAndFooter;

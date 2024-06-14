@@ -11,6 +11,9 @@ import bannerwomens from "./assets/bannerwomens.png";
 import bannerkids from "./assets/bannerkids.png";
 import AdminLayout from "./admin/AdminLayout";
 import HideNavAndFooter from "./admin/HideNavAndFooter";
+import AddProduct from "./admin/AddProduct";
+import ListProduct from "./admin/ListProduct";
+import Dashboard from "./admin/Dashboard";
 
 export default function App() {
   return (
@@ -40,6 +43,9 @@ export default function App() {
           <Route path="/cart-page" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/main" element={<AdminLayout />} />
+          <Route path="/addProduct" element={<AddProduct />} />
+          <Route path="/listProduct" element={<ListProduct />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
         <HideNavAndFooter>
           <Footer />

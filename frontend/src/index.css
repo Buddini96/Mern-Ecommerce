@@ -8,12 +8,14 @@
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
 }
+
 .linearGradient {
   background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
 }
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  /* width: 10px; */
+  display: none;
 }
 /* Track */
 ::-webkit-scrollbar-track {

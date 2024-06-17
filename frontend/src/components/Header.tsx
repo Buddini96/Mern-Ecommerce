@@ -7,6 +7,7 @@ import { FaOpencart } from "react-icons/fa";
 import user from "../assets/user.svg";
 import { FiShoppingCart } from "react-icons/fi";
 import { ShopContext } from "../Context/ShopContext";
+import logout from "../assets/logout.svg";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -53,20 +54,22 @@ const Header = () => {
                 {getTotalCartItems()}
               </span>
             </NavLink>
-            {/* <NavLink
+            {localStorage.getItem('auth-token') ? 
+            <NavLink
               to={"logout"}
+              onClick={() => {localStorage.removeItem('auth-token'); window.location.replace('/')}}
               className={"btn_secondary_rounded flexCenter gap-x-2 medium-16"}
             >
               <img src={logout} alt="logoutImg" height={19} width={19} />
               Logout
-            </NavLink> */}
+            </NavLink> : 
             <NavLink
               to={"login"}
               className={"btn_secondary_rounded flexCenter gap-x-2 medium-16"}
             >
               <img src={user} alt="userImg" height={19} width={19} />
               Login
-            </NavLink>
+            </NavLink>}
           </div>
         </div>
       </div>

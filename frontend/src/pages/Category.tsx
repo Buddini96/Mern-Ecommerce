@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import Item from "../components/Item";
-// @ts-ignore
-import all_products from "../assets/all_products";
+import { ShopContext } from "../Context/ShopContext";
 
 interface CategoryProps {
   category: string;
@@ -10,6 +9,8 @@ interface CategoryProps {
 }
 
 const Category: React.FC<CategoryProps> = ({ category, banner }) => {
+  //@ts-ignore
+  const {all_products} = useContext(ShopContext);
   return (
     <section className="max_padd_container py-12 xl:py-28">
       <div>

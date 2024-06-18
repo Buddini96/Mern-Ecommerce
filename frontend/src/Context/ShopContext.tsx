@@ -1,6 +1,10 @@
-import React, { createContext, useState, ReactNode, useContext } from "react";
-//@ts-ignore
-import all_products from "../assets/all_products";
+import React, {
+  createContext,
+  useState,
+  ReactNode,
+  useContext,
+  useEffect,
+} from "react";
 
 // Define a type for a product (modify based on your actual product structure)
 type Product = {
@@ -29,26 +33,74 @@ interface ShopContextProviderProps {
   children: ReactNode;
 }
 
-export const ShopContext = createContext<ShopContextValue | undefined>(undefined);
+export const ShopContext = createContext<ShopContextValue | undefined>(
+  undefined
+);
 
 const getDefaultCart = (): Cart => {
   let cart: Cart = {};
-  for (let index = 0; index < all_products.length; index++) {
+  for (let index = 0; index < 300 + 1; index++) {
     cart[index] = 0;
   }
   return cart;
 };
 
-const ShopContextProvider: React.FC<ShopContextProviderProps> = ({ children }) => {
+const ShopContextProvider: React.FC<ShopContextProviderProps> = ({
+  children,
+}) => {
   const [cartItems, setCartItems] = useState<Cart>(getDefaultCart());
+  const [all_products, setAll_products] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/allProducts")
+      .then((response) => response.json())
+      .then((data) => setAll_products(data));
+      if(localStorage.getItem('auth-token')) {
+        fetch('http://localhost:4000/getcart',{
+          method: 'POST',
+          headers: {
+            Accept: 'application/form-data',
+            'Content-Type': 'application/json',
+            'auth-token': `${localStorage.getItem('auth-token')}`
+          },
+          body: "",
+         
+        }).then((response) => response.json().then()).then((data) => setCartItems(data))
+      }
+  }, []);
 
   const addToCart = (itemId: number) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-    console.log("Added to cart:", itemId, cartItems);
+    if (localStorage.getItem("auth-token")) {
+      fetch("http://localhost:4000/addtocart", {
+        method: "POST",
+        headers: {
+          Accept: "application/form-data",
+          "auth-token": `${localStorage.getItem("auth-token")}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ itemId: itemId }),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+    }
   };
 
   const removeFromCart = (itemId: number) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+    if (localStorage.getItem("auth-token")) {
+      fetch("http://localhost:4000/removefromcart", {
+        method: "POST",
+        headers: {
+          Accept: "application/form-data",
+          "auth-token": `${localStorage.getItem("auth-token")}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ itemId: itemId }),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+    }
   };
 
   const getTotalCartAmount = () => {
@@ -56,8 +108,12 @@ const ShopContextProvider: React.FC<ShopContextProviderProps> = ({ children }) =
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
         //@ts-ignore
-        let itemInfo = all_products.find((product) => product.id === Number(item));
+        let itemInfo = all_products.find(
+          //@ts-ignore
+          (product) => product.id === Number(item)
+        );
         if (itemInfo) {
+          //@ts-ignore
           totalAmount += itemInfo.new_price * cartItems[item];
         }
       }
@@ -68,12 +124,12 @@ const ShopContextProvider: React.FC<ShopContextProviderProps> = ({ children }) =
   const getTotalCartItems = () => {
     let totalItem = 0;
     for (const item in cartItems) {
-      if(cartItems[item] > 0) {
+      if (cartItems[item] > 0) {
         totalItem += cartItems[item];
       }
     }
     return totalItem;
-  }
+  };
 
   const contextValue: ShopContextValue = {
     all_products,
@@ -85,9 +141,7 @@ const ShopContextProvider: React.FC<ShopContextProviderProps> = ({ children }) =
   };
 
   return (
-    <ShopContext.Provider value={contextValue}>
-      {children}
-    </ShopContext.Provider>
+    <ShopContext.Provider value={contextValue}>{children}</ShopContext.Provider>
   );
 };
 

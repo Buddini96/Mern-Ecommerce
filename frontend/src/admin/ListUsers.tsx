@@ -51,10 +51,10 @@ const ListUsers = () => {
         <div className=" box-border bg-white w-full rounded-sm mt-4  flex-grow ">
           <div className=" box-border bg-white rounded-md w-full ">
             <h4 className="bold-22 p-5 uppercase">User List</h4>
-            <div className="max-h-[70vh] overflow-auto px-12 text-center">
+            <div className="max-h-[70vh] max-w-[81vw] overflow-auto text-center shadow-lg">
               <table className="w-full mx-auto">
-                <thead>
-                  <tr className="bg-primary bold-14 sm:regular-22 text-start ">
+                <thead className="sticky top-0 bg-white z-10">
+                  <tr className="bg-primary bold-14 sm:regular-22 text-start shadow-lg">
                     <th className="p-2">Name</th>
                     <th className="p-2">Email</th>
                     <th className="p-2">Date</th>
@@ -74,7 +74,7 @@ const ListUsers = () => {
                       
                       <td className="">{user.date}</td>
                       <td>
-                        <div className="bold-22 pl-8 sm:pl-14">
+                        <div className="bold-22 flex justify-center">
                           <TbTrash onClick={() => removeProduct(user.name)} />
                         </div>
                       </td>

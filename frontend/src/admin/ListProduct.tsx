@@ -52,10 +52,10 @@ const ListProduct = () => {
         <div className=" box-border bg-white w-full rounded-sm mt-4  flex-grow ">
           <div className=" box-border bg-white rounded-md w-full ">
             <h4 className="bold-22 p-5 uppercase">Product List</h4>
-            <div className="max-h-[70vh] overflow-auto px-12 text-center">
+            <div className="max-h-[72vh] overflow-auto max-w-[81vw] text-center shadow-lg">
               <table className="w-full mx-auto">
-                <thead>
-                  <tr className="bg-primary bold-14 sm:regular-22 text-start ">
+                <thead className="sticky top-0 bg-white z-10">
+                  <tr className="bg-primary bold-14 sm:regular-22 text-start shadow-lg">
                     <th className="p-2">Products</th>
                     <th className="p-2">Title</th>
                     <th className="p-2">Old Price</th>

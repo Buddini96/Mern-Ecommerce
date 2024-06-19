@@ -79,6 +79,8 @@ const Product = mongoose.model("Product", {
   },
 });
 
+
+
 // product add
 app.post("/addProduct", async (req, res) => {
   let products = await Product.find({});
@@ -122,6 +124,40 @@ app.get("/allProducts", async (req, res) => {
   let products = await Product.find({});
   console.log("All products are fetched");
   res.send(products);
+});
+
+// get all Users
+app.get("/allusers", async (req, res) => {
+  let users = await User.find({});
+  console.log("All Users are fetched");
+  res.send(users);
+});
+
+// Delete users// Delete user
+app.delete('/deleteUser', async (req, res) => {
+  const { name } = req.body;
+
+  console.log('Request to delete user:', name);
+
+  if (!name) {
+    return res.status(400).json({ success: false, message: 'Name is required' });
+  }
+
+  try {
+    const user = await User.findOneAndDelete({ name });
+
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'User not found' });
+    }
+
+    res.json({
+      success: true,
+      name: user.name,
+    });
+  } catch (error) {
+    console.error('Error deleting user:', error);
+    res.status(500).json({ success: false, message: 'An error occurred while deleting the user' });
+  }
 });
 
 // Schema user model

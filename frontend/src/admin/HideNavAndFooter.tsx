@@ -7,7 +7,7 @@ function HideNavAndFooter({ children }) {
   const [showNav, setShowNav] = useState(true);
 
   useEffect(() => {
-    if (['/main', '/addProduct', '/listProduct', '/dashboard'].includes(location.pathname)) {
+    if (['/main', '/addProduct', '/listProduct', '/dashboard', '/listUsers'].includes(location.pathname)) {
       setShowNav(false);
     } else {
       setShowNav(true);

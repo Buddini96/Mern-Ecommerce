@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="mx-auto max-w-[1540px] px-6 lg:px-40 relative top-32 xs:top-52">
         <h1 className="h1 capitalize max-w-[37rem]">The New Arrival
         <span className="text-secondary"> Nike</span> Shoes</h1>
-        <p className="text-gray-50 regular-18 mt-6 max-w-[35rem]">
+        <p className="text-gray-50 regular-16 mt-6 max-w-[35rem]">
           Dive into a world of fashion and technology with our exclusive
           collection. From cutting-edge gadgets to trendy apparel, experience
           quality like never before. Shop with confidence and enjoy fast

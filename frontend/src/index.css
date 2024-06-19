@@ -9,6 +9,19 @@
   font-family: 'Inter', sans-serif;
 }
 
+.bg-hero {
+  background-image: url('./assets/background/shoe-1.png'); /* Ensure this path is correct */
+  background-size: 43%;
+  background-position: calc(100% - 90px) calc(50% + 20px);;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%; 
+
+  @media (max-width: 768px) {
+    background-image: none;
+  }
+}
+
 .linearGradient {
   background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
 }
@@ -68,14 +81,14 @@
   }
 
   .btn_dark_rounded { 
-    @apply  medium-15 border border-green-90 bg-green-90 px-5 py-3 text-white transition-all hover:bg-black rounded-full
+    @apply  medium-15 border  bg-green-90 px-5 py-3 text-white transition-all hover:bg-secondary rounded-full
   }
   .btn_dark_outline { 
     @apply  medium-15 border border-green-90 bg-transparent px-7 py-3 text-green-90 transition-all hover:bg-black hover:text-white rounded-full
   }
 
   .btn_secondary_rounded  { 
-    @apply  medium-15 border border-secondary bg-secondary px-5 py-2 text-white transition-all hover:bg-[#27348f] rounded-full 
+    @apply  medium-15 border border-secondary bg-secondary px-5 py-2 text-white transition-all hover:bg-[#afde42] rounded-full 
   }
 
   .max-container {

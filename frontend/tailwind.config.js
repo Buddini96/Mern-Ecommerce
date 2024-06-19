@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#f0f2f5',
-        secondary: '#0973be',
+        primary: '#f5f5f5',
+        secondary: '#75b100',
         tertiary: '#222222',
         slate: {
           10: '#f1f3f4',
@@ -26,7 +26,7 @@ export default {
         },
       },
      backgroundImage: {
-        hero: "url('/src/assets/banner-3.png')",
+        hero: "url('/src/assets/background/shoe-1.png')",
         banneroffer: "url('/src/assets/banneroffer.png')",
       },
       screens: {

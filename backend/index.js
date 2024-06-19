@@ -210,7 +210,7 @@ app.post("/login", async (req, res) => {
   }
 });
 
-//latest products
+// latest products
 app.get("/newCollection", async (req, res) => {
   let products = await Product.find({});
   let newCollection = products.slice(1).slice(-8);

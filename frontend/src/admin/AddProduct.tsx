@@ -5,32 +5,30 @@ import { FaPlus } from "react-icons/fa";
 import { useState } from "react";
 
 const AddProduct = () => {
-  const [image, setImage] = useState(null);
-  
+  const [image, setImage] = useState<File | null>(null);
+
   const [productDetails, setProductDetails] = useState({
     name: "",
     image: "",
     category: "women",
     new_price: "",
     old_price: ""
-  })
+  });
 
-  //@ts-ignore
-  const changeHandler = (e) => {
+  const changeHandler = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setProductDetails({
-     ...productDetails,
+      ...productDetails,
       [e.target.name]: e.target.value
     });
-  }
+  };
 
-  const addProduct = async ()  => {
+  const addProduct = async () => {
     console.log(productDetails);
     let responseData;
     let product = productDetails;
 
     let formData = new FormData();
-    //@ts-ignore
-    formData.append("product", image);
+    formData.append("product", image as File);
 
     await fetch('http://localhost:4000/upload', {
       method: 'POST',
@@ -38,7 +36,7 @@ const AddProduct = () => {
         Accept: 'application/json'
       },
       body: formData,
-    }).then((resp) => resp.json()).then((data) => {responseData = data}) 
+    }).then((resp) => resp.json()).then((data) => {responseData = data});
 
     //@ts-ignore
     if(responseData.success) {
@@ -47,22 +45,34 @@ const AddProduct = () => {
       console.log(product);
       await fetch('http://localhost:4000/addProduct', {
         method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(product),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(product),
       }).then((resp) => resp.json()).then((data) => {
-        data.success?alert('Product Added Successfully'):alert("Failed to add Product");
-      })
-      
+        if (data.success) {
+          alert('Product Added Successfully');
+          // Reset the form
+          setProductDetails({
+            name: "",
+            image: "",
+            category: "women",
+            new_price: "",
+            old_price: ""
+          });
+          setImage(null);
+        } else {
+          alert("Failed to add Product");
+        }
+      });
     }
-    
-  }
+  };
 
-  //@ts-ignore
-  const imageHandler = (e) => {
-    setImage(e.target.files[0]);
+  const imageHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
   };
 
   return (
@@ -130,13 +140,12 @@ const AddProduct = () => {
               onChange={imageHandler}
               type="file"
               name="image"
-              value={productDetails.image}
               id="file-input"
               hidden
               className="bg-primary max-w-80 w-full py-3 px-4"
             />
           </div>
-          <button onClick={() => addProduct()} className="btn_dark_rounded mt-4 flexCenter gap-x-1">
+          <button onClick={addProduct} className="btn_dark_rounded mt-4 flexCenter gap-x-1">
             <FaPlus /> Add Product
           </button>
         </div>

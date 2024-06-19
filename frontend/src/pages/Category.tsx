@@ -15,7 +15,7 @@ const Category: React.FC<CategoryProps> = ({ category, banner }) => {
     <section className="max_padd_container py-12 xl:py-28">
       <div>
         <div>
-          <img src={banner} alt="" className="block my-7 mx-auto" />
+          <img src={banner} alt="" className="block my-7 mx-auto h-[20rem] w-[100vw] bg-cover" />
         </div>
         <div className="flexBetween my-8 mx-2">
           <h5 className="font-bold">
@@ -26,7 +26,7 @@ const Category: React.FC<CategoryProps> = ({ category, banner }) => {
             <MdOutlineKeyboardArrowDown />
           </div>
         </div>
-        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
           {
             // @ts-ignore
             all_products.map((item) => {
@@ -37,6 +37,7 @@ const Category: React.FC<CategoryProps> = ({ category, banner }) => {
                     id={item.id}
                     image={item.image}
                     name={item.name}
+                    category={item.category}
                     new_price={item.new_price}
                     old_price={item.old_price}
                   />

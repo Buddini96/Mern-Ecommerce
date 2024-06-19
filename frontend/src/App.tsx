@@ -6,7 +6,7 @@ import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Product from "./pages/Product";
 import Footer from "./components/Footer";
-import bannermens from "./assets/bannermens.png";
+import bannermens from "./assets/background/bg1.jpg";
 import bannerwomens from "./assets/bannerwomens.png";
 import bannerkids from "./assets/bannerkids.png";
 import AdminLayout from "./admin/AdminLayout";

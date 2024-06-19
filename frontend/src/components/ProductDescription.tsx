@@ -12,20 +12,19 @@ const ProductDescription = () => {
           Size Guide
         </button>
       </div>
-      <div className="flex flex-col pb-16">
+      <div className="flex flex-col pb-0">
         <p className="text-sm">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-          laborum ea explicabo quis delectus asperiores, dignissimos veniam,
-          sequi natus ipsum modi id ullam harum consequatur voluptatem suscipit,
-          recusandae eligendi exercitationem sit repellendus perferendis fuga
-          reiciendis ipsam ducimus. Ipsum ab voluptates voluptate minima,
-          suscipit quia ipsa placeat, et eveniet laudantium dolorum!
+          Inspired by the original low-profile tennis shoes, the Nike Killshot 2
+          updates the upper with various textured leathers to create a fresh
+          look. From soft suedes to smooth leathers with the perfect sheen, it's
+          courtside attitude with a modern touch. To prove you're on top, the
+          rubber gum sole adds the cherry on bottom.
         </p>
         <p className="text-sm">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-          assumenda qui aspernatur impedit quo rem nihil! Tempora earum vitae
-          soluta hic labore corporis placeat fugit vero nisi, est quia
-          obcaecati.
+          Created for the hardwood but taken to the streets, the basketball icon
+          returns with classic details and throwback hoops flair. Channeling
+          '80s vibes, its padded, low-cut collar lets you take your game
+          anywhere—in comfort.
         </p>
       </div>
     </div>

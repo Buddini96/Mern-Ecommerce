@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../assets/logo3.png";
+import logo from "../assets/logo/nikeLogo.png";
 import Navbar from "./Navbar";
 import { useContext, useState } from "react";
 import { MdClose, MdMenu } from "react-icons/md";
@@ -18,11 +18,11 @@ const Header = () => {
   const {getTotalCartItems} = useContext(ShopContext);
 
   return (
-    <header className="fixed top-0 left-0  max_padd_container w-full bg-white ring-1 ring-slate-900/5 z-10">
+    <header className="fixed top-0 left-0  max_padd_container w-full bg-[#f5f5f5] ring-1 ring-slate-900/5 z-10">
       <div className="px-4 flexBetween py-2 max-xs:px-2">
         <div>
           <Link to={""}>
-            <img src={logo} height={50} width={50} />
+            <img src={logo} height={60} width={60} />
           </Link>
         </div>
         <Navbar

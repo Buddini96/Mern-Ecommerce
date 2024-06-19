@@ -6,11 +6,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .bg-hero {
-  background-image: url('./assets/background/shoe-1.png'); /* Ensure this path is correct */
+  background-image: url('./assets/background/shoe-1.png'); 
   background-size: 43%;
   background-position: calc(100% - 90px) calc(50% + 20px);;
   background-repeat: no-repeat;
@@ -27,8 +27,8 @@
 }
 /* width */
 ::-webkit-scrollbar {
-  /* width: 10px; */
-  display: none;
+  width: 10px;
+  /* display: none; */
 }
 /* Track */
 ::-webkit-scrollbar-track {

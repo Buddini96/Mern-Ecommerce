@@ -18,7 +18,13 @@ const Login = () => {
 
   const login = async () => {
     console.log("Login function executed", formData);
-    
+
+    // Check for admin credentials
+    if (formData.email === 'admin@gmail.com' && formData.password === 'admin123') {
+      window.location.replace('/main');
+      return;
+    }
+
     try {
       const response = await fetch('http://localhost:4000/login', {
         method: 'POST',
@@ -39,7 +45,7 @@ const Login = () => {
       }
     } catch (error) {
       console.error("Error during login:", error);
-      alert("An error occurred during signup. Please try again.");
+      alert("An error occurred during login. Please try again.");
     }
   };
 
@@ -59,8 +65,8 @@ const Login = () => {
       const responseData = await response.json();
   
       if (responseData.success) {
-        localStorage.setItem('auth-token', responseData.token);
-        window.location.replace('/');
+        setState("Login");
+        alert("Signup successful! Please login.");
       } else {
         alert(responseData.errors);
       }

@@ -1,6 +1,5 @@
 import Sidebar from './Sidebar';
 import NavbarAdmin from './NavbarAdmin';
-import upload from '../assets/upload_area.svg';
 import { FaUsers } from "react-icons/fa";
 import { GiRunningShoe } from "react-icons/gi";
 import { useEffect, useState } from 'react';
@@ -19,9 +18,7 @@ const Dashboard = () => {
         const productsResponse = await fetch('http://localhost:4000/totalProducts');
         const productsData = await productsResponse.json();
         
-        // const ordersResponse = await fetch('http://localhost:4000/totalOrders');
-        // const ordersData = await ordersResponse.json();
-
+        
         setCounts({
           users: usersData.totalUsers,
           products: productsData.totalProducts,

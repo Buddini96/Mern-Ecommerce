@@ -21,7 +21,7 @@ const Login = () => {
 
     // Check for admin credentials
     if (formData.email === 'admin@gmail.com' && formData.password === 'admin123') {
-      window.location.replace('/main');
+      window.location.replace('/dashboard');
       return;
     }
 

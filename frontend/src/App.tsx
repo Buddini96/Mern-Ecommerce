@@ -16,6 +16,7 @@ import ListProduct from "./admin/ListProduct";
 import Dashboard from "./admin/Dashboard";
 import ListUsers from "./admin/ListUsers";
 import EditProduct from "./admin/EditProduct";
+import Gallery from "./pages/Gallery";
 
 
 export default function App() {
@@ -51,6 +52,7 @@ export default function App() {
           <Route path="/listProduct" element={<ListProduct />} />
           <Route path="/listUsers" element={<ListUsers />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
         <HideNavAndFooter>
           <Footer />

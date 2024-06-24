@@ -177,6 +177,35 @@ app.get("/allProducts", async (req, res) => {
   res.send(products);
 });
 
+// total products
+app.get("/totalProducts", async (req, res) => {
+  try {
+    let totalProducts = await Product.countDocuments({});
+    
+    console.log("Total products counted:", totalProducts);
+    
+    res.send({ totalProducts: totalProducts });
+  } catch (error) {
+    console.error("Error counting products:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// total users
+app.get("/totalUsers", async (req, res) => {
+  try {
+    let totalUsers = await User.countDocuments({});
+    
+    console.log("Total users counted:", totalUsers);
+    
+    res.send({ totalUsers: totalUsers });
+  } catch (error) {
+    console.error("Error counting users:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+
 // get all Users
 app.get("/allusers", async (req, res) => {
   let users = await User.find({});
@@ -184,7 +213,7 @@ app.get("/allusers", async (req, res) => {
   res.send(users);
 });
 
-// Delete users// Delete user
+// Delete users
 app.delete('/deleteUser', async (req, res) => {
   const { name } = req.body;
 

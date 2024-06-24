@@ -15,6 +15,8 @@ import AddProduct from "./admin/AddProduct";
 import ListProduct from "./admin/ListProduct";
 import Dashboard from "./admin/Dashboard";
 import ListUsers from "./admin/ListUsers";
+import EditProduct from "./admin/EditProduct";
+
 
 export default function App() {
   return (
@@ -45,6 +47,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/main" element={<AdminLayout />} />
           <Route path="/addProduct" element={<AddProduct />} />
+          <Route path={"/editProduct/:id"} element={<EditProduct />} />
           <Route path="/listProduct" element={<ListProduct />} />
           <Route path="/listUsers" element={<ListUsers />} />
           <Route path="/dashboard" element={<Dashboard />} />

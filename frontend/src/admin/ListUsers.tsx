@@ -58,7 +58,7 @@ const ListUsers = () => {
                     <th className="p-2">Name</th>
                     <th className="p-2">Email</th>
                     <th className="p-2">Date</th>
-                    <th className="p-2">Remove</th>
+                    <th className="p-2"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -74,8 +74,13 @@ const ListUsers = () => {
                       
                       <td className="">{user.date}</td>
                       <td>
-                        <div className="bold-22 flex justify-center">
-                          <TbTrash onClick={() => removeProduct(user.name)} />
+                      <div
+                          className="bg-red-600 hover:bg-red-600 text-black font-bold py-2 px-4 rounded flex items-center cursor-pointer"
+                          style={{ width: "100px" }}
+                          onClick={() => removeProduct(user.name)}
+                        >
+                          <TbTrash className=" mr-2" />
+                          Delete
                         </div>
                       </td>
                     </tr>

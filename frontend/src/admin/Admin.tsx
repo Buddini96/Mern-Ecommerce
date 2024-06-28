@@ -14,8 +14,6 @@ const Admin = () => {
       <Route path='/dashboard' element={<Dashboard />}/>
         <Route path='/addProduct' element={<AddProduct />}/>
         <Route path='/listProduct' element={<ListProduct />}/>
-        
-        
       </Routes>
       
     </div>

@@ -12,13 +12,11 @@ const { METHODS } = require("http");
 const corsConfig = {
   origin: "*",
   credentials: true,
-  methods: [
-    "GET" , "PUT", "PATCH", "POST", "DELETE", "OPTIONS"
-  ],
-}
+  methods: ["GET", "PUT", "PATCH", "POST", "DELETE"],
+};
 
-app.use(cors(corsConfig));
 app.use(express.json());
+app.use(cors(corsConfig));
 
 //Database connection
 mongoose.connect(

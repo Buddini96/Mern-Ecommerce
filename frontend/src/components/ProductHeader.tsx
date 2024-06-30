@@ -1,4 +1,3 @@
-import React from "react";
 import { TbArrowRight } from "react-icons/tb";
 
 // @ts-ignore

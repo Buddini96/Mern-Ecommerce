@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from "../assets/logo/nikeLogo.png";
 import prof from "../assets/background/ava-1.jpg";
 

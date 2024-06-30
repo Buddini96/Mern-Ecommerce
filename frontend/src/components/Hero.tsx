@@ -1,6 +1,5 @@
 import { MdOutlineLocalOffer } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-import { FaStar } from "react-icons/fa";
 
 const Hero = () => {
   return (

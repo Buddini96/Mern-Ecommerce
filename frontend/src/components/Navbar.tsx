@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { MdCategory, MdContacts, MdHomeFilled, MdShop2,  } from 'react-icons/md';
+import { MdHomeFilled  } from 'react-icons/md';
 import { GrGallery } from "react-icons/gr";
 import { CgBoy } from "react-icons/cg";
 import { PiBabyBold } from "react-icons/pi";

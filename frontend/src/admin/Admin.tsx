@@ -1,4 +1,3 @@
-import React from 'react'
 import Sidebar from './Sidebar'
 import { Route, Routes } from 'react-router-dom'
 import AddProduct from './AddProduct'

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { AiFillProduct } from "react-icons/ai";
 import { PiShoppingBagOpenFill } from "react-icons/pi";
-import { TbLogout2 } from "react-icons/tb";
 import { FaUsers } from "react-icons/fa";
 import { FaClipboardList } from "react-icons/fa";
 import { BiSolidLogOut } from "react-icons/bi";

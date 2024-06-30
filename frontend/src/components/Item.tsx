@@ -1,11 +1,10 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
 import { FaStarHalfStroke } from "react-icons/fa6";
 import { FaRegStar } from "react-icons/fa";
 import favourite from "../assets/background/love.svg";
-import Category from "../pages/Category";
 
 interface ItemProps {
   id: string;

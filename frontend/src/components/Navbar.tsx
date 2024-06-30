@@ -6,7 +6,6 @@ import { CgBoy } from "react-icons/cg";
 import { PiBabyBold } from "react-icons/pi";
 import { CgGirl } from "react-icons/cg";
 
-// Define an interface for the props
 interface NavbarProps {
   containerStyles: string;
 }

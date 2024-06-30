@@ -3,7 +3,6 @@ import Sidebar from './Sidebar'
 import { Route, Routes } from 'react-router-dom'
 import AddProduct from './AddProduct'
 import ListProduct from './ListProduct'
-import Test from './Test'
 import Dashboard from './Dashboard'
 
 const Admin = () => {

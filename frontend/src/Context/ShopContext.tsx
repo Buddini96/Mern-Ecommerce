@@ -6,7 +6,6 @@ import React, {
   useEffect,
 } from "react";
 
-// Define a type for a product (modify based on your actual product structure)
 type Product = {
   id: number;
   name: string;
@@ -28,7 +27,6 @@ interface ShopContextValue {
   getTotalCartItems: () => number;
 }
 
-// Define the props for the provider
 interface ShopContextProviderProps {
   children: ReactNode;
 }

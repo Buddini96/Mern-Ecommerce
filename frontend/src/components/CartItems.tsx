@@ -8,7 +8,6 @@ const CartItems = () => {
     const context = useContext(ShopContext);
 
     if (!context) {
-        // Handle the case where context is undefined
         return <div>Loading...</div>;
     }
 

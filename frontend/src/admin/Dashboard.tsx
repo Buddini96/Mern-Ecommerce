@@ -11,7 +11,6 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Replace with your actual API endpoints
         const usersResponse = await fetch('http://localhost:4000/totalUsers');
         const usersData = await usersResponse.json();
         

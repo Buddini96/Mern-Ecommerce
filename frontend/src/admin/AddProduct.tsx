@@ -53,7 +53,6 @@ const AddProduct = () => {
       }).then((resp) => resp.json()).then((data) => {
         if (data.success) {
           alert('Product Added Successfully');
-          // Reset the form
           setProductDetails({
             name: "",
             image: "",

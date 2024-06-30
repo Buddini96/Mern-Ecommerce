@@ -18,7 +18,6 @@ import ListUsers from "./admin/ListUsers";
 import EditProduct from "./admin/EditProduct";
 import Gallery from "./pages/Gallery";
 
-
 export default function App() {
   return (
     <main className="bg-primary text-tertiary">

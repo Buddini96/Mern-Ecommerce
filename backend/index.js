@@ -18,6 +18,8 @@ const corsConfig = {
 app.use(express.json());
 app.use(cors(corsConfig));
 
+
+
 //Database connection
 mongoose.connect(
   "mongodb+srv://ecommerceMern:user123@cluster0.nrdblkk.mongodb.net/ecommerce-mern?retryWrites=true&w=majority&appName=Cluster0"
@@ -29,12 +31,9 @@ app.get("/", (req, res) => {
 
 //image storage
 const storage = multer.diskStorage({
-  destination: "./upload/images",
+  destination: "/tmp/images",  
   filename: (req, file, cb) => {
-    return cb(
-      null,
-      `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`
-    );
+    cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`);
   },
 });
 

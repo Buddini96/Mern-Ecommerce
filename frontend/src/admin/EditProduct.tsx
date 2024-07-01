@@ -103,18 +103,6 @@ const EditProduct = () => {
     }
   };
 
-  // const resetForm = () => {
-  //   setProductDetails({
-  //     id: productId,
-  //     name: "",
-  //     image: "", 
-  //     category: "women",
-  //     new_price: "",
-  //     old_price: "",
-  //   });
-  //   setImage(null);
-  // };
-
   return (
     <div>
       <NavbarAdmin />

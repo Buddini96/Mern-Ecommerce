@@ -1,5 +1,6 @@
 # Nike E-Commerce Website
-![Screenshot 2024-06-24 202415](https://github.com/Buddini96/Mern-Ecommerce/assets/84434313/9c39b5ae-5a47-47a3-ac26-1350280670bb)
+![Screenshot 2024-07-01 002732](https://github.com/Buddini96/Mern-Ecommerce/assets/84434313/39b7294d-8249-4371-9c0d-f58012497cd4)
+
 Welcome to the Nike E-Commerce Website, your go-to destination for the latest Nike products. This project aims to provide a seamless shopping experience with a comprehensive catalog of Nike products, easy search functionality, and secure checkout.
 
 ## Technologies Used 🛠️
